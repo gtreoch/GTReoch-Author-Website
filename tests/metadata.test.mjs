@@ -28,11 +28,13 @@ test('share previews use a published 1200 by 630 PNG at the active HTTPS origin'
   for (const file of ['index.html', 'behind-the-scenes.html']) {
     const nodes = elements(await readFile(new URL(`../${file}`, import.meta.url), 'utf8'));
     const metadata = new Map(nodes.filter(node => node.tagName === 'meta').map(node => [node.attributes.property || node.attributes.name, node.attributes.content]));
-    assert.equal(metadata.get('og:image'), `${origin}/${imagePath}`);
-    assert.equal(metadata.get('twitter:image'), `${origin}/${imagePath}`);
-    assert.equal(metadata.get('og:image:type'), 'image/png');
-    assert.equal(metadata.get('og:image:width'), '1200');
-    assert.equal(metadata.get('og:image:height'), '630');
+    const preview = file === 'index.html' ? 'assets/scripted-in-al-qaeda-ink-cover.jpg' : imagePath;
+    assert.ok(publicFiles.includes(preview));
+    assert.equal(metadata.get('og:image'), `${origin}/${preview}`);
+    assert.equal(metadata.get('twitter:image'), `${origin}/${preview}`);
+    assert.equal(metadata.get('og:image:type'), file === 'index.html' ? 'image/jpeg' : 'image/png');
+    assert.equal(metadata.get('og:image:width'), file === 'index.html' ? '998' : '1200');
+    assert.equal(metadata.get('og:image:height'), file === 'index.html' ? '1500' : '630');
     assert.equal(metadata.get('twitter:card'), 'summary_large_image');
     assert.ok(metadata.get('og:image:alt')?.includes('G.T. Reoch'));
     assert.ok(metadata.get('twitter:image:alt')?.includes('G.T. Reoch'));
@@ -41,7 +43,7 @@ test('share previews use a published 1200 by 630 PNG at the active HTTPS origin'
     assert.equal(metadata.get('twitter:url'), pageUrl);
     if (file === 'index.html') {
       assert.match(metadata.get('og:description'), /Scripted in Al Qaeda Ink/);
-      assert.match(metadata.get('og:description'), /Albatross/);
+      assert.doesNotMatch(metadata.get('og:description'), /Albatross/);
     } else {
       assert.match(metadata.get('og:description'), /interview/);
     }
