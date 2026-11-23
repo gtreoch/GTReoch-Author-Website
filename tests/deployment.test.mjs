@@ -34,7 +34,7 @@ test('published build exposes its commit and excludes private files', async t =>
   assert.deepEqual(JSON.parse(await readFile(join(output, 'health.json'), 'utf8')), version);
   const outputFiles = (await readdir(output, { recursive: true, withFileTypes: true }))
     .filter(entry => entry.isFile())
-    .map(entry => join(entry.parentPath, entry.name).slice(output.length + 1));
+    .map(entry => join(entry.parentPath, entry.name).slice(output.length + 1).replaceAll('\\', '/'));
   assert.deepEqual(outputFiles.sort(), [...publicFiles, 'health.json', 'version.json'].sort());
 });
 

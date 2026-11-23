@@ -100,3 +100,10 @@
     .shelf-book img { transition: none; }
     .shelf-book > a:first-child:hover img { transform: none; }
 }
+
+/* Temporary single-book launch layout. Original two-book content remains in Git. */
+.cover-shelf { grid-template-columns: 1fr; max-width: 290px; justify-self: center; }
+.shelf-book img { height: 380px; }
+.book-grid, .trailer-grid { grid-template-columns: minmax(0, 1fr); max-width: 850px; }
+.novel-card h3, .novel-card > p:not(.novel-genre) { min-height: 0; }
+@media (max-width: 768px) { .cover-shelf { max-width: 230px; } .shelf-book img { height: 290px; } }
