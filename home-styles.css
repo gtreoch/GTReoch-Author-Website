@@ -10,6 +10,8 @@
 .reader-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 24px; }
 .reader-button { display: inline-flex; align-items: center; justify-content: center; gap: 16px; background: #d6b85d; border: 1px solid #d6b85d; color: #152719; font-size: 0.86rem; font-weight: 600; padding: 12px 20px; border-radius: 3px; min-height: 46px; }
 .reader-button:hover { background: #e6cc7f; border-color: #e6cc7f; color: #0c180e; }
+.reader-button.trailer-outline { background: transparent; border-color: #d6b85d; color: #eeeade; }
+.reader-button.trailer-outline:hover { background: #d6b85d; color: #152719; }
 .reader-text-link { display: inline-flex; align-items: center; gap: 10px; font-size: 0.86rem; font-weight: 600; text-decoration: underline; text-underline-offset: 5px; }
 .intro-copy .reader-text-link { color: #eeeade; }
 .cover-shelf { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; align-items: end; max-width: 470px; width: 100%; justify-self: end; }
@@ -107,3 +109,8 @@
 .book-grid, .trailer-grid { grid-template-columns: minmax(0, 1fr); max-width: 850px; }
 .novel-card h3, .novel-card > p:not(.novel-genre) { min-height: 0; }
 @media (max-width: 768px) { .cover-shelf { max-width: 230px; } .shelf-book img { height: 290px; } }
+
+/* Local preview: larger featured cover. */
+.cover-shelf { max-width: 340px; }
+.shelf-book img { height: 450px; }
+@media (max-width: 768px) { .cover-shelf { max-width: 270px; } .shelf-book img { height: 340px; } }
