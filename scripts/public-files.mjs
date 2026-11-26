@@ -23,6 +23,7 @@ export const publicFiles = [
   'assets/scripted-in-al-qaeda-ink-poster.jpg',
   'assets/albatross-trailer.mp4',
   'assets/albatross-poster.jpg',
+  'assets/albatross-cover.jpg',
   'assets/Seeds of Darkness Ch2.m4a',
   'assets/Scripted in Al Qaeda Ink.wav',
 ];

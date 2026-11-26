@@ -114,3 +114,11 @@
 .cover-shelf { max-width: 340px; }
 .shelf-book img { height: 450px; }
 @media (max-width: 768px) { .cover-shelf { max-width: 270px; } .shelf-book img { height: 340px; } }
+
+.coming-soon-section { padding: 0 0 64px; background: #f7f5ed; }
+.coming-soon-card { display: flex; align-items: center; gap: 36px; max-width: 850px; padding: 30px; background: #fffefa; border: 1px solid #dcded3; border-top: 3px solid #a99555; }
+.coming-soon-card img { width: 160px; height: auto; flex-shrink: 0; }
+.coming-soon-card .eyebrow { color: #8b783f; }
+.coming-soon-card h2 { color: #203723; margin: 12px 0; }
+.coming-soon-card p:last-child { color: #45503f; }
+@media (max-width: 480px) { .coming-soon-card { gap: 20px; padding: 20px; } .coming-soon-card img { width: 110px; } }
