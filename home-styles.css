@@ -119,6 +119,9 @@
 .coming-soon-card { display: flex; align-items: center; gap: 36px; max-width: 850px; padding: 30px; background: #fffefa; border: 1px solid #dcded3; border-top: 3px solid #a99555; }
 .coming-soon-card img { width: 160px; height: auto; flex-shrink: 0; }
 .coming-soon-card .eyebrow { color: #8b783f; }
-.coming-soon-card h2 { color: #203723; margin: 12px 0; }
+.coming-soon-card h3 { color: #203723; margin: 12px 0; font-size: 1.65rem; }
 .coming-soon-card p:last-child { color: #45503f; }
 @media (max-width: 480px) { .coming-soon-card { gap: 20px; padding: 20px; } .coming-soon-card img { width: 110px; } }
+
+.coming-soon-heading { max-width: 850px; padding: 0 0 20px; }
+.coming-soon-heading h2 { color: #203723; font-size: 2rem; font-weight: 700; }
